@@ -13,16 +13,16 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 
 # Note: Latest version of kubectl may be found at:
 # https://github.com/kubernetes/kubernetes/releases
-ENV KUBE_LATEST_VERSION="v1.17.3"
+ENV KUBE_LATEST_VERSION="v1.19.2"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v3.1.2"
+ENV HELM_VERSION="v3.3.4"
 # Note: Latest version of helmfile may be found at:
 # https://github.com/roboll/helmfile/releases
-ENV HELMFILE_VERSION="v0.104.0"
+ENV HELMFILE_VERSION="v0.130.1"
 # Note: Latest version of sops may be found at:
 # https://github.com/mozilla/sops/releases
-ENV SOPS_VERSION="v3.5.0"
+ENV SOPS_VERSION="v3.6.1"
 # FIXME: This should come from the system itself
 ENV ARCH="amd64"
 
