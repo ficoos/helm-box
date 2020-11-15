@@ -23,6 +23,9 @@ ENV HELMFILE_VERSION="v0.130.1"
 # Note: Latest version of sops may be found at:
 # https://github.com/mozilla/sops/releases
 ENV SOPS_VERSION="v3.6.1"
+# Note: Latest version of k9s may be found at:
+# https://github.com/derailed/k9s/releases
+ENV K9S_VERSION="v0.23.10"
 # FIXME: This should come from the system itself
 ENV ARCH="amd64"
 
@@ -38,6 +41,7 @@ RUN apk add --no-cache ca-certificates bash git openssh curl gnupg \
     && chmod +x /usr/local/bin/helmfile \
     && wget https://github.com/mozilla/sops/releases/download/${SOPS_VERSION}/sops-${SOPS_VERSION}.linux -O /usr/local/bin/sops \
     && chmod +x /usr/local/bin/sops \
+    && curl -L https://github.com/derailed/k9s/releases/download/${K9S_VERSION}/k9s_Linux_x86_64.tar.gz | tar xvz k9s > /usr/local/bin/k9s && mv k9s /usr/local/bin/ \
     && helm plugin install https://github.com/databus23/helm-diff --version master \
     && helm plugin install https://github.com/futuresimple/helm-secrets
 
