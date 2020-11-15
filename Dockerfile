@@ -45,6 +45,8 @@ RUN apk add --no-cache ca-certificates bash git openssh curl gnupg \
     && helm plugin install https://github.com/databus23/helm-diff --version master \
     && helm plugin install https://github.com/futuresimple/helm-secrets
 
+RUN echo 'GPG_TTY=$(tty) && export GPG_TTY' >> /root/.bashrc
+
 WORKDIR /config
 
 CMD bash
